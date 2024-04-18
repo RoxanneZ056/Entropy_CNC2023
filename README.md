@@ -8,7 +8,5 @@ The files in this directory include:
 
 511145.protein.physical.links.v12.0.txt.gz - Protein network data for E.Coli (physical subnetwork, scored links between proteins), downloaded from STRING (version 12.0, access date 03/11/2024)
 
-Data pre-processing.R - Script for data pre-processing (for the two STRING networks)
-
-Simulation of weak attacks.R - Script for weak attacks simulations on two STRING networks, DD model and the DD model with node loss.
+Code.R - Script for data pre-processing and weak attacks simulations on two STRING networks, DD model and the DD model with node loss.
 
