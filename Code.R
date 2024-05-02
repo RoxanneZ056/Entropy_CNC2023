@@ -13,6 +13,13 @@
 # Description: Script for data pre-processing (for the two STRING networks)
 # Where files are written to or accessed, the exact path name has been removed.
 
+#install libraries
+library(netcom)
+library(netdiffuseR)
+library(igraph)
+library(foreach)
+library(data.table)
+
 yeast <- read.table("4932.protein.physical.links.v12.0.txt.gz", header=TRUE)
 colnames(yeast)[3] <- "weight"
 ppi_yeast <- graph_from_data_frame(yeast, directed = TRUE, vertices = NULL)
@@ -48,11 +55,6 @@ plot(ppi_ecoli,layout=layout_nicely)
 
 # Description: Script for weak attacks simulations on two STRING networks,
 # DD model and the new DD model with node loss
-
-library(netcom)
-library(netdiffuseR)
-library(igraph)
-library(foreach)
 
 ## network efficiency
 node_eff <- function(graph,nodeIndex){
@@ -224,7 +226,6 @@ abline(v=10)
 
 
 ## Node Loss Model
-library(data.table)
 NodeLossModel1 <- function(size, divergence, directed = FALSE, q1) {
   ## Start with pair of connected nodes
   matrix <- matrix(0, nrow = 3, ncol = 3)
