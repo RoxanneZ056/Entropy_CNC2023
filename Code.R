@@ -195,6 +195,16 @@ for (i in 1:10){
   simulationC2[[i]] <-  greedy_edge(ppi_yeast,attackC2,35)
 }
 
+# Note: the simulations could take long, for a quicker option, can try the following 
+# with a smaller number of nodes.
+#for (i in 1:10){
+#  simulationA_yeast[[i]] <-  greedy_node(ppi_yeast,attackA,10,1)
+#  simulationB1_1node[[i]] <- greedy_node(ppi_yeast,attackB1,10, 1)
+#  simulationB1_2nodes[[i]] <- greedy_node(ppi_yeast,attackB1,10, 2)
+#  simulationB1_5nodes[[i]] <- greedy_node(ppi_yeast,attackB1,10, 5)
+#  simulationC1[[i]] <-  greedy_edge(ppi_yeast,attackC1,10)
+#  simulationC2[[i]] <-  greedy_edge(ppi_yeast,attackC2,10)
+#}
 
 plot(as.numeric(colMeans(rbindlist(Map(function(x) data.frame(t(x)), simulationA_yeast)))[1]),
      type="b",lty=5,col="blue",pch=22,
